@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Function Expression va Arrow Function</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    h1 { text-align: center; color: #5a67d8; }
+    h2 { color: #805ad5; border-bottom: 2px solid #e9d8fd; padding-bottom: 10px; }
+    pre {
+      background: #f7fafc;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 5px solid #667eea;
+      overflow-x: auto;
+    }
+    .quiz {
+      background: #fef5e7;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border: 2px solid #fbbf24;
+    }
+    button {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover { background: #5a67d8; }
+    .answer { margin-top: 10px; font-weight: bold; color: #d53f8c; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Function Expression va Arrow Function</h1>
+    <p><strong>Salom, do‘stim!</strong> Bugun JavaScriptda funksiyalarni yozishning 2 ta zamonaviy usulini o‘rganamiz.</p>
+
+    <h2>1. Oddiy funksiya (Function Declaration)</h2>
+    <p>Buni hamma biladi:</p>
+    <pre>
+function salom() {
+  console.log("Salom dunyo!");
+}
+salom(); // Salom dunyo!</pre>
+
+    <h2>2. Function Expression</h2>
+    <p>Funksiyani o‘zgaruvchiga saqlab qo‘yamiz. Bu ko‘proq moslashuvchan.</p>
+    <pre>
+// Nomli Function Expression
+const salomBer = function ismliFunksiya() {
+  console.log("Men Function Expressionman!");
+};
+
+salomBer(); // Men Function Expressionman!
+
+// Anonim Function Expression (eng ko‘p ishlatiladi)
+const kopaytir = function(a, b) {
+  return a * b;
+};
+
+console.log(kopaytir(5, 3)); // 15</pre>
+
+    <div class="quiz">
+      <strong>Savol 1:</strong> Quyidagi kod ishlaydimi?<br>
+      <pre>
+console.log(kopaytir(4, 5));
+const kopaytir = function(a, b) { return a * b; };</pre>
+      <button onclick="javob1()">Javobni ko‘rsat</button>
+      <div class="answer" id="javob1" style="display:none;">
+        ❌ Ishlamaydi! Chunki funksiya expression hoisting qilinmaydi. Avval e’lon qilish kerak, keyin chaqirish kerak.
+      </div>
+    </div>
+
+    <h2>3. Arrow Function (Eng zamonaviy usul) =></h2>
+    <p>2015 yilda (ES6) paydo bo‘ldi. Kodni qisqartiradi va <code>this</code> bilan muammo chiqarmaydi.</p>
+
+    <pre>
+// 1-qatorli arrow function – return avtomatik
+const kopaytir2 = (a, b) => a * b;
+
+console.log(kopaytir2(6, 7)); // 42
+
+// Bir parametr bo‘lsa qavsni olib tashlasa ham bo‘ladi
+const kvadrat = x => x * x;
+console.log(kvadrat(8)); // 64
+
+// Hech qanday parametr bo‘lmasa
+const salomDunyo = () => console.log("Salom Arrow!");
+salomDunyo();
+
+// Ko‘p qatorli arrow function – {} ichida return yozish shart
+const yigindi = (a, b) => {
+  console.log("Hisoblayapman...");
+  return a + b;
+};
+console.log(yigindi(10, 20)); // 30</pre>
+
+    <h2>Asosiy farqlar (Jadval)</h2>
+    <table border="1" style="width:100%; border-collapse:collapse; margin:20px 0;">
+      <tr style="background:#e9d8fd;">
+        <th></th>
+        <th>Function Expression</th>
+        <th>Arrow Function</th>
+      </tr>
+      <tr>
+        <td>Sintaksis</td>
+        <td><code>function() {}</code></td>
+        <td><code>() => {}</code></td>
+      </tr>
+      <tr>
+        <td><code>this</code> qiymati</td>
+        <td>Chaqrish joyiga qarab o‘zgaradi</td>
+        <td>Ota-onasidagi <code>this</code> ni oladi (lexically bound)</td>
+      </tr>
+      <tr>
+        <td><code>arguments</code> obyekti</td>
+        <td>Bor</td>
+        <td>Yo‘q</td>
+      </tr>
+      <tr>
+        <td>constructor sifatida ishlatish</td>
+        <td>Bo‘ladi (new)</td>
+        <td>Bo‘lmaydi</td>
+      </tr>
+    </table>
+
+    <div class="quiz">
+      <strong>Savol 2:</strong> Quyidagi kodda consoleda nima chiqadi?<br>
+      <pre>
+const obj = {
+  ism: "Ali",
+  salom: function() {
+    setTimeout(function() {
+      console.log(this.ism);
+    }, 1000);
+  },
+  salomArrow: function() {
+    setTimeout(() => {
+      console.log(this.ism);
+    }, 1000);
+  }
+};
+obj.salom();      // ?
+obj.salomArrow(); // ?</pre>
+      <button onclick="javob2()">Javobni ko‘rsat</button>
+      <div class="answer" id="javob2" style="display:none;">
+        Birinchi → <code>undefined</code> (chunki oddiy funksiya ichida this → window)<br>
+        Ikkinchi → <code>Ali</code> (arrow function ota-onasining this-ini oladi → obj)
+      </div>
+    </div>
+
+    <h2>Amaliy mashqlar (O‘zingiz sinab ko‘ring)</h2>
+    <p>Brauzer konsolida yozib sinab ko‘ring:</p>
+    <ol>
+      <li>Raqamlar massivini 2 barobar kattalashtiradigan arrow function yozing</li>
+      <li>Ism va yosh oladigan, “Men …, … yoshdaman” degan matn qaytaradigan arrow function</li>
+      <li>1 soniyadan keyin “Tugadi!” degan habar chiqaradigan arrow function</li>
+    </ol>
+
+    <h2>Xulosa</h2>
+    <ul>
+      <li><strong>Function Expression</strong> – moslashuvchan, lekin this bilan ehtiyot bo‘lish kerak</li>
+      <li><strong>Arrow Function</strong> – qisqa, zamonaviy, this muammosi yo‘q → hozirda eng ko‘p ishlatiladi</li>
+      <li>Ikkalasi ham juda muhim, ikkalasini ham bilish kerak!</li>
+    </ul>
+
+    <p style="text-align:center; font-size:20px;">🎉 Tabriklayman! Endi siz Arrow Function va Function Expression mutaxassisiga aylandingiz!</p>
+  </div>
+
+  <script>
+    function javob1() {
+      document.getElementById("javob1").style.display = "block";
+    }
+    function javob2() {
+      document.getElementById("javob2").style.display = "block";
+    }
+  </script>
+</body>
+</html>

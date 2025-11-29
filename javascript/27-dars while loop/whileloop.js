@@ -37,44 +37,44 @@
 
 
 
-// for (let i=0; i < names.length; i++){
-//  if (
-//     names[i] !== "guli" &&
-//     names[i] !== "anaxon" &&
-//     names[i] !== "shahnoza" &&
-//     names[i] !== "zulayho"
-// ) {
-//     console.log(names[i] + " bek");
-// }
+//  for (let i=0; i < names.length; i++){
+//   if (
+//      names[i] !== "guli" &&
+//      names[i] !== "anaxon" &&
+//      names[i] !== "shahnoza" &&
+//      names[i] !== "zulayho"
+//  ) {
+//      console.log(names[i] + " bek");
+//  }
 
-// }
-
-
-
-// let a = 2
-// let n = 5
-
-// let k =1
-
-// for (let i = 1; i <= n; i++) {
-//    k= k*a 
-// }
-
-//  console.log(k);
+//  }
 
 
 
 //  let a = 2
-//  let b = 10
-//  let s = 0
+//  let n = 5
 
+//  let k =1
 
-//  for ( i = a; i <= b; i++){
-//      s = s + i*i
-    
+//  for (let i = 1; i <= n; i++) {
+//     k= k*a 
 //  }
 
-//  console.log(s);
+//   console.log(k);
+
+
+
+//   let a = 2
+//   let b = 10
+//   let s = 0
+
+
+//   for ( i = a; i <= b; i++){
+//       s = s + i*i
+    
+//   }
+
+//   console.log(s);
  
 
 
