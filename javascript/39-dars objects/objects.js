@@ -1,4 +1,4 @@
-let query = prompt("nima boyicha qidirasiz ...?")
+
 const user = {
     name: "shahnoza",
     surname: "ollaberganova",
@@ -10,9 +10,6 @@ const user = {
     password: "1234"
 }
 
+delete user.name
 
-
-if (user[query] == undefined) {
-   alert("bunday narsa yo'q");
-    
-}
+console.log(user);
