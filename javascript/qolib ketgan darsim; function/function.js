@@ -18,26 +18,46 @@
 
 // calculated(2, 3, 4, 5) //145
 
-let password = prompt("parolmi kiriting: ")
+// let password = prompt("parolmi kiriting: ")
 
 
 
-function checkPasswordStrength(password) {
-    let passwordLength =password.length
+// function checkPasswordStrength(password) {
+//     let passwordLength =password.length
 
  
-if (passwordLength < 8) {
-   return "weak"
+// if (passwordLength < 8) {
+//    return "weak"
     
-} else if(passwordLength >= 8 && passwordLength <= 12) {
-    return "medium"
+// } else if(passwordLength >= 8 && passwordLength <= 12) {
+//     return "medium"
     
-}else if(passwordLength > 12) {
-    return "strong"
+// }else if(passwordLength > 12) {
+//     return "strong"
     
-}
-}
+// }
+// }
 
-let result = checkPasswordStrength(password);
-console.log(result);
+// let result = checkPasswordStrength(password);
+// console.log(result);
 
+// Function expression (anonim)
+const add = function(a, b) {
+  return a + b;
+};
+
+// Named function expression
+const mul = function multiply(a, b) {
+  return a * b;
+};
+
+// Arrow - block body
+const sub = (a, b) => {
+  return a - b;
+};
+
+// Arrow - concise body (implicit return)
+const square = x => x * x;
+
+// Hech argument bo'lmasa:
+const sayHi = () => console.log("Hi");
